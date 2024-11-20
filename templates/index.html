@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Text Summarizer</h1>
+            <p>Quickly generate concise summaries for your texts.</p>
+        </header>
+        <main>
+            <form id="summarizer-form" method="POST">
+                <textarea id="input-text" rows="10" placeholder="Paste your text here..."></textarea>
+                <button type="submit">Summarize</button>
+                <button type="button" id="reset-button">Reset</button>
+                <button type="button" id="reset-history-button">Reset History</button>
+            </form>
+            <div id="output-section">
+                <h3>Summary:</h3>
+                <p id="summary-output"></p>
+            </div>
+        </div>
+        <div id="history-section">
+            <h3>History</h3>
+            <ul id="history-log"></ul>
+        </div>           
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
